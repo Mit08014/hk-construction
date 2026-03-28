@@ -374,7 +374,7 @@
 
       // Submit to Formspree (or fall back to mailto)
       const formAction = contactForm.getAttribute('action');
-      const isFormspreeReady = formAction && !formAction.includes('xzdkdwyl');
+      const isFormspreeReady = formAction && !formAction.includes('YOUR_FORMSPREE_ID');
 
       if (!isFormspreeReady) {
         const fn = document.getElementById('firstName').value;
