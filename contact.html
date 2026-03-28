@@ -9,7 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hkconstruction.co.uk/contact.html">
+  <meta property="og:url" content="https://hk-construction.netlify.app/contact.html">
   <meta property="og:title" content="Contact Us | HK Construction">
   <meta property="og:description" content="Get in touch with HK Construction for a free quote. Based in Harrow — call +44 7742 629206 or email hkconstruction77@gmail.com.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80">
@@ -19,11 +19,11 @@
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80">
 </head>
 <body>
+
   <!-- Header -->
   <header class="header header--scrolled" id="header">
     <div class="header__inner">
       <a href="/" class="logo">HK<span>Construction</span></a>
-
       <nav class="nav">
         <ul class="nav__list" id="navList">
           <li><a href="/" class="nav__link">Home</a></li>
@@ -53,6 +53,8 @@
   <section class="section section--white">
     <div class="container">
       <div class="contact-section">
+
+        <!-- Contact Info -->
         <div class="contact-info">
           <h2>Get In Touch</h2>
           <p>Whether you're planning a new build, renovation, or simply want to discuss your options, we'd love to hear from you. Contact HK Construction today for reliable and professional service.</p>
@@ -102,27 +104,11 @@
           </div>
         </div>
 
+        <!-- Contact Form -->
         <div class="contact-form-wrapper">
-          <!--
-            FORM SETUP — READ THIS:
-            This form uses Formspree to email you directly.
-            1. Go to https://formspree.io and sign up free
-            2. Click "New Form", name it "HK Construction Contact"
-            3. Copy your Form ID (e.g. xpwzabcd)
-            4. Replace xzdkdwyl below with it
-            Until then, Send Message opens your email client as a fallback.
-          -->
-          <form
-            class="contact-form"
-            id="contactForm"
-            name="contact"
-            method="POST"
-            action="https://formspree.io/f/xzdkdwyl"
-          >
-            <input type="hidden" name="_subject" value="New Project Enquiry - HK Construction">
-            <input type="text" name="_gotcha" style="display:none">
+          <form class="contact-form" id="contactForm">
 
-            <!-- Form notification -->
+            <!-- Notification box (hidden until form is submitted) -->
             <div class="form-notification" id="formNotification" style="display: none;"></div>
 
             <div class="form-row">
@@ -158,7 +144,7 @@
                 <option value="Extension">Home Extension</option>
                 <option value="Renovation">Renovation</option>
                 <option value="Commercial">Commercial Build</option>
-                <option value="Maintenance">Maintenance & Repairs</option>
+                <option value="Maintenance">Maintenance &amp; Repairs</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -178,13 +164,15 @@
                 Sending...
               </span>
             </button>
+
           </form>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Google Maps Section -->
+  <!-- Google Maps -->
   <section class="section section--cream" style="padding: 0;">
     <div class="map-container">
       <iframe
@@ -258,169 +246,124 @@
     </div>
   </footer>
 
-  <script>   var menuToggle = document.getElementById('menuToggle');   var navList = document.getElementById('navList');   if (menuToggle && navList) {     menuToggle.addEventListener('click', function() {       navList.classList.toggle('active');       menuToggle.classList.toggle('active');     });     navList.querySelectorAll('.nav__link').forEach(function(link) {       link.addEventListener('click', function() {         navList.classList.remove('active');         menuToggle.classList.remove('active');       });     });   }   var header = document.getElementById('header');   if (header) {     window.addEventListener('scroll', function() {       header.classList.toggle('header--scrolled', window.scrollY > 100);     });   } </script>
   <script>
-    // Form validation and submission
-    const contactForm = document.getElementById('contactForm');
-    const formNotification = document.getElementById('formNotification');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-
-    // Validation functions
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(email);
+    // ── Mobile Menu ──────────────────────────────────────────
+    var menuToggle = document.getElementById('menuToggle');
+    var navList = document.getElementById('navList');
+    if (menuToggle && navList) {
+      menuToggle.addEventListener('click', function () {
+        navList.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+      navList.querySelectorAll('.nav__link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navList.classList.remove('active');
+          menuToggle.classList.remove('active');
+        });
+      });
     }
 
-    function showError(inputId, message) {
-      const errorEl = document.getElementById(inputId + 'Error');
-      const inputEl = document.getElementById(inputId);
-      if (errorEl) {
-        errorEl.textContent = message;
-        errorEl.style.display = 'block';
-      }
-      if (inputEl) {
-        inputEl.classList.add('input-error');
-      }
+    // ── Header scroll effect ─────────────────────────────────
+    var header = document.getElementById('header');
+    if (header) {
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('header--scrolled', window.scrollY > 100);
+      });
     }
 
-    function clearError(inputId) {
-      const errorEl = document.getElementById(inputId + 'Error');
-      const inputEl = document.getElementById(inputId);
-      if (errorEl) {
-        errorEl.textContent = '';
-        errorEl.style.display = 'none';
-      }
-      if (inputEl) {
-        inputEl.classList.remove('input-error');
-      }
-    }
+    // ── Contact Form ─────────────────────────────────────────
+    var contactForm     = document.getElementById('contactForm');
+    var formNotification = document.getElementById('formNotification');
+    var submitBtn       = document.getElementById('submitBtn');
+    var btnText         = submitBtn.querySelector('.btn-text');
+    var btnLoading      = submitBtn.querySelector('.btn-loading');
 
     function showNotification(message, type) {
       formNotification.textContent = message;
       formNotification.className = 'form-notification form-notification--' + type;
       formNotification.style.display = 'block';
-
-      // Scroll to notification
       formNotification.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
+    function showError(id, message) {
+      var err = document.getElementById(id + 'Error');
+      var inp = document.getElementById(id);
+      if (err) { err.textContent = message; err.style.display = 'block'; }
+      if (inp) { inp.classList.add('input-error'); }
+    }
+
+    function clearError(id) {
+      var err = document.getElementById(id + 'Error');
+      var inp = document.getElementById(id);
+      if (err) { err.textContent = ''; err.style.display = 'none'; }
+      if (inp) { inp.classList.remove('input-error'); }
+    }
+
+    function setLoading(on) {
+      btnText.style.display    = on ? 'none'        : 'inline';
+      btnLoading.style.display = on ? 'inline-flex' : 'none';
+      submitBtn.disabled       = on;
+    }
+
     function validateForm() {
-      let isValid = true;
+      var ok = true;
+      ['firstName','lastName','email','message'].forEach(clearError);
 
-      // Clear previous errors
-      ['firstName', 'lastName', 'email', 'message'].forEach(clearError);
+      var firstName = document.getElementById('firstName').value.trim();
+      var lastName  = document.getElementById('lastName').value.trim();
+      var email     = document.getElementById('email').value.trim();
+      var message   = document.getElementById('message').value.trim();
 
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName = document.getElementById('lastName').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!firstName) {
-        showError('firstName', 'Please enter your first name');
-        isValid = false;
-      }
-
-      if (!lastName) {
-        showError('lastName', 'Please enter your last name');
-        isValid = false;
-      }
-
+      if (!firstName) { showError('firstName', 'Please enter your first name'); ok = false; }
+      if (!lastName)  { showError('lastName',  'Please enter your last name');  ok = false; }
       if (!email) {
-        showError('email', 'Please enter your email address');
-        isValid = false;
-      } else if (!validateEmail(email)) {
-        showError('email', 'Please enter a valid email address');
-        isValid = false;
+        showError('email', 'Please enter your email address'); ok = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('email', 'Please enter a valid email address'); ok = false;
       }
-
       if (!message) {
-        showError('message', 'Please tell us about your project');
-        isValid = false;
+        showError('message', 'Please tell us about your project'); ok = false;
       } else if (message.length < 10) {
-        showError('message', 'Please provide more details about your project');
-        isValid = false;
+        showError('message', 'Please provide more details (at least 10 characters)'); ok = false;
       }
-
-      return isValid;
+      return ok;
     }
 
-    function setLoading(isLoading) {
-      if (isLoading) {
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline-flex';
-        submitBtn.disabled = true;
-      } else {
-        btnText.style.display = 'inline';
-        btnLoading.style.display = 'none';
-        submitBtn.disabled = false;
-      }
-    }
+    // Clear errors as user types
+    ['firstName','lastName','email','message'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.addEventListener('input', function() { clearError(id); });
+    });
 
-    contactForm.addEventListener('submit', function(e) {
+    // Form submit — sends directly to Formspree → your Gmail
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!validateForm()) return;
 
-      // Validate form
-      if (!validateForm()) {
-        return;
-      }
-
-      // Show loading state
       setLoading(true);
 
-      // Collect form data
-      const formData = new FormData(contactForm);
+      var data = new FormData(contactForm);
 
-      // Submit to Formspree (or fall back to mailto)
-      const formAction = contactForm.getAttribute('action');
-      const isFormspreeReady = formAction && !formAction.includes('YOUR_FORMSPREE_ID');
-
-      if (!isFormspreeReady) {
-        const fn = document.getElementById('firstName').value;
-        const ln = document.getElementById('lastName').value;
-        const em = document.getElementById('email').value;
-        const ph = document.getElementById('phone').value || 'Not provided';
-        const pt = document.getElementById('projectType').value || 'Not specified';
-        const mg = document.getElementById('message').value;
-        window.location.href = 'mailto:hkconstruction77@gmail.com?subject=' +
-          encodeURIComponent('Project Enquiry from ' + fn + ' ' + ln) +
-          '&body=' + encodeURIComponent('Name: ' + fn + ' ' + ln + '\nEmail: ' + em + '\nPhone: ' + ph + '\nProject Type: ' + pt + '\n\nMessage:\n' + mg);
-        showNotification('Opening your email client with a pre-filled message. Please hit send!', 'info');
-        setLoading(false);
-        return;
-      }
-
-      fetch(formAction, {
-        method: 'POST',
+      fetch('https://formspree.io/f/xzdkdwyl', {
+        method:  'POST',
         headers: { 'Accept': 'application/json' },
-        body: formData
+        body:    data
       })
-      .then(response => {
+      .then(function (response) {
         if (response.ok) {
-          showNotification('Your message has been sent successfully! We will get back to you soon.', 'success');
+          showNotification('Your message has been sent! We will be in touch soon.', 'success');
           contactForm.reset();
         } else {
-          throw new Error('Network response was not ok');
+          showNotification('Something went wrong. Please email us directly at hkconstruction77@gmail.com', 'error');
         }
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Form submission error:', error);
+      .catch(function () {
         showNotification('Something went wrong. Please email us directly at hkconstruction77@gmail.com', 'error');
         setLoading(false);
       });
     });
-
-    // Clear errors on input
-    ['firstName', 'lastName', 'email', 'message'].forEach(function(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener('input', function() {
-          clearError(id);
-        });
-      }
-    });
   </script>
+
 </body>
 </html>
