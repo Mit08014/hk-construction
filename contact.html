@@ -109,7 +109,7 @@
             1. Go to https://formspree.io and sign up free
             2. Click "New Form", name it "HK Construction Contact"
             3. Copy your Form ID (e.g. xpwzabcd)
-            4. Replace YOUR_FORMSPREE_ID below with it
+            4. Replace xzdkdwyl below with it
             Until then, Send Message opens your email client as a fallback.
           -->
           <form
@@ -117,7 +117,7 @@
             id="contactForm"
             name="contact"
             method="POST"
-            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            action="https://formspree.io/f/xzdkdwyl"
           >
             <input type="hidden" name="_subject" value="New Project Enquiry - HK Construction">
             <input type="text" name="_gotcha" style="display:none">
@@ -374,7 +374,7 @@
 
       // Submit to Formspree (or fall back to mailto)
       const formAction = contactForm.getAttribute('action');
-      const isFormspreeReady = formAction && !formAction.includes('YOUR_FORMSPREE_ID');
+      const isFormspreeReady = formAction && !formAction.includes('xzdkdwyl');
 
       if (!isFormspreeReady) {
         const fn = document.getElementById('firstName').value;
