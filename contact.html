@@ -258,7 +258,7 @@
     </div>
   </footer>
 
-  <script src="/src/main.ts" type="module"></script>
+  <script>   var menuToggle = document.getElementById('menuToggle');   var navList = document.getElementById('navList');   if (menuToggle && navList) {     menuToggle.addEventListener('click', function() {       navList.classList.toggle('active');       menuToggle.classList.toggle('active');     });     navList.querySelectorAll('.nav__link').forEach(function(link) {       link.addEventListener('click', function() {         navList.classList.remove('active');         menuToggle.classList.remove('active');       });     });   }   var header = document.getElementById('header');   if (header) {     window.addEventListener('scroll', function() {       header.classList.toggle('header--scrolled', window.scrollY > 100);     });   } </script>
   <script>
     // Form validation and submission
     const contactForm = document.getElementById('contactForm');
